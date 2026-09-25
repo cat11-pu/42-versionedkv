@@ -1,0 +1,5 @@
+{
+  "name": "versionedkv",
+  "private": true,
+  "type": "module"
+}
