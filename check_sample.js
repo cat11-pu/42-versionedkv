@@ -13,10 +13,10 @@ const view = read(spec.commits, spec.reads || [], spec.snapshots || []);
 const cleaned = vacuum(spec.commits, spec.snapshots || [], spec.budget);
 const out = render(spec);
 
-emit("每次读到的版本 =", JSON.stringify(view.visible));
-emit("每个键的版本链 =", JSON.stringify(view.chains));
-emit("被回收的版本 =", JSON.stringify(cleaned.vacuumed));
-emit("被快照保护的版本 =", JSON.stringify(cleaned.protected));
+emit("每次读到的版本 =", view.visible);
+emit("每个键的版本链 =", view.chains);
+emit("被回收的版本 =", cleaned.vacuumed);
+emit("被快照保护的版本 =", cleaned.protected);
 emit("预算消耗 =", cleaned.used);
 emit("活跃快照读是否一致 =", out.consistent);
 emit("回收冲突的错误码 =", spec.conflict_code);
